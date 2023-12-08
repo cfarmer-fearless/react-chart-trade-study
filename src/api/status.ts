@@ -45,6 +45,7 @@ export function transformCovidCasesToCountsByAgeGroup(
         age_group: row.age_group,
         count: 1,
       });
+      foundGroups.push(row.age_group);
     } else {
       counts.forEach((group) => {
         if (group.age_group === row.age_group) {

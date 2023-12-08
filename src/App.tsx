@@ -1,29 +1,25 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { StatusResponse, getStatus } from "./api/status";
-import { buildPieChartConfig, transformStatus } from "./utils/open-viz";
-import CdcChart from "@cdc/chart";
+import {
+  CovidCountByAgeGroup,
+  getCovidCases,
+  transformCovidCasesToCountsByAgeGroup,
+} from "./api/status";
 
 function App() {
-  const [status, setStatus] = useState<StatusResponse | undefined>();
-  const [pieConfig, setPieConfig] = useState<unknown | undefined>();
+  const [covidData, setCovidData] = useState<CovidCountByAgeGroup[]>();
 
   useEffect(() => {
     async function initState() {
-      const status = await getStatus();
-      setStatus(status);
+      const rawCovidData = await getCovidCases();
+      const countsByAgeGroup =
+        transformCovidCasesToCountsByAgeGroup(rawCovidData);
+      setCovidData(countsByAgeGroup);
     }
     initState();
   }, []);
 
-  useEffect(() => {
-    if (status) {
-      const openVizPieData = transformStatus(status.summary);
-      setPieConfig(buildPieChartConfig(openVizPieData));
-    }
-  }, [status]);
-
-  return <>{pieConfig && <CdcChart config={pieConfig} />}</>;
+  return <>{covidData && <div>{JSON.stringify(covidData)}</div>}</>;
 }
 
 export default App;
