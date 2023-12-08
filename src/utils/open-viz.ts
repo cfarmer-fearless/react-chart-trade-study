@@ -136,7 +136,14 @@ export function buildBarChartConfig(data: unknown[]): unknown {
     useLogScale: false,
     filterBehavior: "Filter Change",
     highlightedBarValues: [],
-    series: [],
+    series: [
+      {
+        dataKey: "count",
+        type: "Bar",
+        axis: "Left",
+        tooltip: true,
+      },
+    ],
     tooltips: {
       opacity: 90,
     },
@@ -144,7 +151,7 @@ export function buildBarChartConfig(data: unknown[]): unknown {
       pattern_id: "brush_pattern",
       accent_color: "#ddd",
     },
-    visualizationType: "Pie",
+    visualizationType: "Bar",
     data,
     dataFileSourceType: "file",
     dataDescription: {

@@ -1,0 +1,26 @@
+[
+  {
+    "age_group": "50 to 64 years",
+    "count": 162
+  },
+  {
+    "age_group": "65+ years",
+    "count": 156
+  },
+  {
+    "age_group": "18 to 49 years",
+    "count": 497
+  },
+  {
+    "age_group": "0 - 17 years",
+    "count": 152
+  },
+  {
+    "age_group": "Missing",
+    "count": 15
+  },
+  {
+    "age_group": "NA",
+    "count": 18
+  }
+]

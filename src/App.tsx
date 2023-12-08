@@ -5,6 +5,7 @@ import {
   getCovidCases,
   transformCovidCasesToCountsByAgeGroup,
 } from "./api/status";
+import { CovidOpenVizWrapper } from "./components/CovidOpenVizWrapper";
 
 function App() {
   const [covidData, setCovidData] = useState<CovidCountByAgeGroup[]>();
@@ -19,7 +20,7 @@ function App() {
     initState();
   }, []);
 
-  return <>{covidData && <div>{JSON.stringify(covidData)}</div>}</>;
+  return <div>{covidData && <CovidOpenVizWrapper data={covidData} />}</div>;
 }
 
 export default App;
