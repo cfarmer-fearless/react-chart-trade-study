@@ -6,6 +6,7 @@ import {
   transformCovidCasesToCountsByAgeGroup,
 } from "./api/status";
 import { CovidOpenVizWrapper } from "./components/CovidOpenVizWrapper";
+import { Performance } from "./components/Performance";
 
 function App() {
   const [covidData, setCovidData] = useState<CovidCountByAgeGroup[]>();
@@ -20,7 +21,15 @@ function App() {
     initState();
   }, []);
 
-  return <div>{covidData && <CovidOpenVizWrapper data={covidData} />}</div>;
+  return (
+    <div>
+      {covidData && (
+        <Performance id="cove-bar-chart">
+          <CovidOpenVizWrapper data={covidData} />
+        </Performance>
+      )}
+    </div>
+  );
 }
 
 export default App;
