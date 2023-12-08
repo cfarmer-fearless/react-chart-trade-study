@@ -37,12 +37,20 @@ export function transformCovidCasesToCountsByAgeGroup(
   data: CovidCase[]
 ): CovidCountByAgeGroup[] {
   const counts: CovidCountByAgeGroup[] = [];
+  const foundGroups: string[] = [];
 
   data.forEach((row) => {
-    if (!Object.keys(counts).includes(row.age_group)) {
-      counts[row.age_group] = 1;
+    if (!foundGroups.includes(row.age_group)) {
+      counts.push({
+        age_group: row.age_group,
+        count: 1,
+      });
     } else {
-      counts[row.age_group]++;
+      counts.forEach((group) => {
+        if (group.age_group === row.age_group) {
+          group.count++;
+        }
+      });
     }
   });
 
