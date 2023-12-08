@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "schema_type": "csv",
+  "has_headers": "true|false",
+  "header_names": "{if available or null}",
+  "report_created": "{ISO8601 date}",
+  "validation_rules": {
+    "version": "1.2",
+    "version_date": "{ISO8601 date}",
+    "description": "{if available}"
+  },
+  "summary": {
+    "total_issues": 8,
+    "warnings": 5,
+    "errors": 3
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "column_numbers": [
+        35
+      ],
+      "column_names": [
+        "field1"
+      ],
+      "row_number": 45,
+      "description": "{state the reason for the issue or warning}",
+      "recommendation": "{if applicable or null}"
+    },
+    {
+      "severity": "error",
+      "column_numbers": [
+        22,
+        24
+      ],
+      "column_names": [
+        "field1",
+        "field2"
+      ],
+      "row_number": 45,
+      "description": "{state the reason for the issue or warning}",
+      "recommendation": "{if applicable or null}"
+    }
+  ]
+}
