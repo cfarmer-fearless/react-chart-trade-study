@@ -15,7 +15,7 @@ export function RechartsPieChartWrapper(data: CovidCountByAgeGroup[]) {
         cx="50%"
         cy="50%"
         outerRadius={150}
-        fill="#8884d8"
+        fill="#005eaa"
         label
       />
       <Tooltip />

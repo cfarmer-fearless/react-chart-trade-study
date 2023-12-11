@@ -16,8 +16,8 @@ export function RechartsBarChartWrapper(data: CovidCountByAgeGroup[]) {
 
   return (
     <BarChart
-      width={500}
-      height={300}
+      width={600}
+      height={400}
       data={transformedData}
       margin={{
         top: 5,
@@ -31,7 +31,7 @@ export function RechartsBarChartWrapper(data: CovidCountByAgeGroup[]) {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="count" fill="#8884d8" />
+      <Bar dataKey="count" fill="#005eaa" />
     </BarChart>
   );
 }

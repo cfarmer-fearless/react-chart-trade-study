@@ -1,13 +1,24 @@
 import { CovidCountByAgeGroup } from "../api/status";
-import { buildBarChartConfig } from "../utils/open-viz";
+import { buildBarChartConfig, buildPieChartConfig } from "../utils/open-viz";
 import CdcChart from "@cdc/chart";
+import CdcEditor from "@cdc/editor";
 
 type CovidOpenVizWrapperProps = {
   data: CovidCountByAgeGroup[];
 };
 
-export function CovidOpenVizWrapper({ data }: CovidOpenVizWrapperProps) {
+export function CovidOpenVizBarChartWrapper({
+  data,
+}: CovidOpenVizWrapperProps) {
   const chartConfig = buildBarChartConfig(data);
+
+  return <CdcChart config={chartConfig} />;
+}
+
+export function CovidOpenVizPieChartWrapper({
+  data,
+}: CovidOpenVizWrapperProps) {
+  const chartConfig = buildPieChartConfig(data);
 
   return <CdcChart config={chartConfig} />;
 }

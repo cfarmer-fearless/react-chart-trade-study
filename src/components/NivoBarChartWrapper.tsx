@@ -1,4 +1,4 @@
-import { BarDatum, Bar } from "@nivo/bar";
+import { BarDatum, ResponsiveBar } from "@nivo/bar";
 
 import { CovidCountByAgeGroup } from "../api/status";
 import { transformStatusForNivoBarChart } from "../utils/nivo";
@@ -6,18 +6,15 @@ import { transformStatusForNivoBarChart } from "../utils/nivo";
 export function NivoBarChartWrapper(data: CovidCountByAgeGroup[]) {
   const transformedData = transformStatusForNivoBarChart(data);
 
-  console.log(transformedData);
   return (
-    <Bar
-      width={700}
-      height={400}
+    <ResponsiveBar
       data={transformedData as BarDatum[]}
       keys={["count"]}
       indexBy="age_group"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.4}
       valueScale={{ type: "linear" }}
-      colors="#3182CE"
+      colors="#005eaa"
       animate={true}
       enableLabel={false}
       axisTop={null}
