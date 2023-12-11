@@ -5,7 +5,14 @@ import {
   getCovidCases,
   transformCovidCasesToCountsByAgeGroup,
 } from "./api/status";
+
 import { CovidOpenVizWrapper } from "./components/CovidOpenVizWrapper";
+
+import { RechartsBarChartWrapper } from "./components/RechartsBarChartWrapper";
+import { RechartsPieChartWrapper } from "./components/RechartsPieChartWrapper";
+
+import { NivoBarChartWrapper } from "./components/NivoBarChartWrapper";
+
 import { Performance } from "./components/Performance";
 
 function App() {
@@ -24,9 +31,20 @@ function App() {
   return (
     <div>
       {covidData && (
-        <Performance id="cove-bar-chart">
-          <CovidOpenVizWrapper data={covidData} />
-        </Performance>
+        <>
+          <Performance id="cove-bar-chart">
+            <CovidOpenVizWrapper data={covidData} />
+          </Performance>
+          <Performance id="recharts-bar-chart">
+            <RechartsBarChartWrapper data={covidData} />
+          </Performance>
+          <Performance id="recharts-pie-chart">
+            <RechartsPieChartWrapper data={covidData} />
+          </Performance>
+          <Performance id="nivo-bar-chart">
+            <NivoBarChartWrapper data={covidData} />
+          </Performance>
+        </>
       )}
     </div>
   );

@@ -19,12 +19,12 @@ export const Performance = ({ id, onRender, children }: PerformanceProps) => {
       commitTime: number
     ) => {
       console.log(
-        id,
-        phase,
-        actualDuration,
-        baseDuration,
-        startTime,
-        commitTime
+        `ID: ${id}`,
+        `Phase: ${phase}`,
+        `Render duration: ${actualDuration}`,
+        `Re-render duration (update): ${baseDuration}`,
+        `Start render or update: ${startTime}`,
+        `Comitted to render or update ${commitTime}`
       );
     };
   } else {
