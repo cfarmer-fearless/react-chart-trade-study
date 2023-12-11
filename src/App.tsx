@@ -7,7 +7,7 @@ import {
 } from "./api/status";
 
 import {
-  // CovidOpenVizPieChartWrapper,
+  CovidOpenVizPieChartWrapper,
   CovidOpenVizBarChartWrapper,
 } from "./components/CovidOpenVizWrapper";
 
@@ -22,6 +22,8 @@ import { Performance, PerformanceLog } from "./components/Performance";
 function App() {
   const [covidData, setCovidData] = useState<CovidCountByAgeGroup[]>();
   const [openVizBarChartPerformanceData, setOpenVizBarChartPerformanceData] =
+    useState<PerformanceLog>();
+  const [openVizPieChartPerformanceData, setOpenVizPieChartPerformanceData] =
     useState<PerformanceLog>();
   const [rechartsBarChartPerformanceData, setRechartsBarChartPerformanceData] =
     useState<PerformanceLog>();
@@ -42,6 +44,25 @@ function App() {
   ) => {
     !openVizBarChartPerformanceData &&
       setOpenVizBarChartPerformanceData({
+        id: id,
+        phase: phase,
+        actualDuration: actualDuration,
+        baseDuration: baseDuration,
+        startTime: startTime,
+        commitTime: commitTime,
+      });
+  };
+
+  const OpenVizPieChartOnRender = (
+    id: string,
+    phase: string,
+    actualDuration: number,
+    baseDuration: number,
+    startTime: number,
+    commitTime: number
+  ) => {
+    !openVizPieChartPerformanceData &&
+      setOpenVizPieChartPerformanceData({
         id: id,
         phase: phase,
         actualDuration: actualDuration,
@@ -143,7 +164,7 @@ function App() {
         <>
           <h2>Performance Testing</h2>
           <h4>OpenViz (COVE)</h4>
-          <div className="section-wrapper-cove">
+          <div className="section-wrapper">
             <div className="section-left-cove">
               <Performance
                 id="cove-bar-chart"
@@ -152,7 +173,7 @@ function App() {
                 <CovidOpenVizBarChartWrapper data={covidData} />
               </Performance>
             </div>
-            <div className="section-right-cove">
+            <div className="section-right-cove section-right-cove-bar">
               <b>Bar Chart Performance Stats: </b>
               <br />
               <br />
@@ -183,11 +204,49 @@ function App() {
               <br />
             </div>
           </div>
+          <hr />
+          <div className="section-wrapper section-wrapper-cove-pie">
+            <div className="section-left-cove section-left-cove-pie">
+              <Performance
+                id="cove-pie-chart"
+                onRender={OpenVizPieChartOnRender}
+              >
+                <CovidOpenVizPieChartWrapper data={covidData} />
+              </Performance>
+            </div>
+            <div className="section-right-cove">
+              <b>Pie Chart Performance Stats: </b>
+              <br />
+              <br />
+              {`ID: ${openVizPieChartPerformanceData?.id}`}
+              <br />
+              <br />
+              {`Phase: ${openVizPieChartPerformanceData?.phase}`}
+              <br />
+              <br />
+              {`Render duration: ${Math.round(
+                openVizPieChartPerformanceData?.actualDuration || NaN
+              )}ms`}
+              <br />
+              <br />
+              {`Re-render duration (update): ${Math.round(
+                openVizPieChartPerformanceData?.baseDuration || NaN
+              )}ms`}
+              <br />
+              <br />
+              {`Start render or update: ${Math.round(
+                openVizPieChartPerformanceData?.startTime || NaN
+              )}ms`}
+              <br />
+              <br />
+              {`Comitted to render or update ${Math.round(
+                openVizPieChartPerformanceData?.commitTime || NaN
+              )}ms`}
+              <br />
+            </div>
+          </div>
           <h4>Recharts</h4>
           <div className="section-wrapper">
-            {/* <Performance id="cove-pie-chart">
-            <CovidOpenVizPieChartWrapper data={covidData} />
-          </Performance> */}
             <div className="section-left">
               <Performance
                 id="recharts-bar-chart"

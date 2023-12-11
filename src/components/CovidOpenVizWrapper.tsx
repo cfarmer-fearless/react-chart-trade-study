@@ -1,7 +1,6 @@
 import { CovidCountByAgeGroup } from "../api/status";
 import { buildBarChartConfig, buildPieChartConfig } from "../utils/open-viz";
 import CdcChart from "@cdc/chart";
-import CdcEditor from "@cdc/editor";
 
 type CovidOpenVizWrapperProps = {
   data: CovidCountByAgeGroup[];

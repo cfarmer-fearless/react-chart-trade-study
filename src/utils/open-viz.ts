@@ -164,7 +164,7 @@ export function buildBarChartConfig(data: unknown[]): unknown {
       },
       table: {
         label: "Data Table",
-        expanded: true,
+        expanded: false,
         limitHeight: false,
         height: "",
         caption: "",
@@ -173,7 +173,7 @@ export function buildBarChartConfig(data: unknown[]): unknown {
         indexLabel: "",
         download: false,
         showVertical: true,
-        show: true,
+        show: false,
       },
       orientation: "horizontal",
       color: "pinkpurple",
@@ -242,32 +242,7 @@ export function buildBarChartConfig(data: unknown[]): unknown {
         accent_color: "#ddd",
       },
       visualizationType: "Bar",
-      data: [
-        {
-          age_group: "18 to 49 years",
-          count: 478,
-        },
-        {
-          age_group: "0 - 17 years",
-          count: 161,
-        },
-        {
-          age_group: "50 to 64 years",
-          count: 201,
-        },
-        {
-          age_group: "65+ years",
-          count: 143,
-        },
-        {
-          age_group: "NA",
-          count: 8,
-        },
-        {
-          age_group: "Missing",
-          count: 9,
-        },
-      ],
+      data,
       dataFileSourceType: "file",
       dataDescription: {
         horizontal: false,
@@ -599,7 +574,20 @@ export function buildPieChartConfig(data: unknown[]): unknown {
       axisPadding: 0,
       target: 0,
       maxTickRotation: 0,
-      dataKey: "label",
+      dataKey: "age_group",
+    },
+    table: {
+      label: "Data Table",
+      expanded: true,
+      limitHeight: false,
+      height: "",
+      caption: "",
+      showDownloadUrl: false,
+      showDataTableLink: true,
+      indexLabel: "",
+      download: false,
+      showVertical: true,
+      show: false,
     },
     orientation: "vertical",
     color: "pinkpurple",

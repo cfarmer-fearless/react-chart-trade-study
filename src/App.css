@@ -23,7 +23,6 @@ h4 {
 
 .section-right {
   display: flex;
-  display: flex;
   width: 216px;
   margin-left: -3rem;
   margin-top: 2rem;
@@ -35,7 +34,6 @@ h4 {
 }
 
 .section-right-cove {
-  position: absolute;
   top: 12rem;
   right: 1rem;
   width: 46vw;
