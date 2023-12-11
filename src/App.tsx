@@ -11,6 +11,7 @@ import { CovidOpenVizWrapper } from "./components/CovidOpenVizWrapper";
 import { RechartsBarChartWrapper } from "./components/RechartsBarChartWrapper";
 import { RechartsPieChartWrapper } from "./components/RechartsPieChartWrapper";
 
+import { NivoPieChartWrapper } from "./components/NivoPieChartWrapper";
 import { NivoBarChartWrapper } from "./components/NivoBarChartWrapper";
 
 import { Performance } from "./components/Performance";
@@ -43,6 +44,9 @@ function App() {
           </Performance>
           <Performance id="nivo-bar-chart">
             <NivoBarChartWrapper data={covidData} />
+          </Performance>
+          <Performance id="nivo-pie-chart">
+            <NivoPieChartWrapper data={covidData} />
           </Performance>
         </>
       )}
