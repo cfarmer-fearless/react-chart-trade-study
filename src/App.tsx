@@ -183,23 +183,23 @@ function App() {
               {`Phase: ${openVizBarChartPerformanceData?.phase}`}
               <br />
               <br />
-              {`Render duration: ${Math.round(
-                openVizBarChartPerformanceData?.actualDuration || NaN
+              {`Render duration: ${openVizBarChartPerformanceData?.actualDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Re-render duration (update): ${Math.round(
-                openVizBarChartPerformanceData?.baseDuration || NaN
+              {`Re-render duration (update): ${openVizBarChartPerformanceData?.baseDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Start render or update: ${Math.round(
-                openVizBarChartPerformanceData?.startTime || NaN
+              {`Start render or update: ${openVizBarChartPerformanceData?.startTime?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Comitted to render or update ${Math.round(
-                openVizBarChartPerformanceData?.commitTime || NaN
+              {`Comitted to render or update ${openVizBarChartPerformanceData?.commitTime?.toFixed(
+                2
               )}ms`}
               <br />
             </div>
@@ -224,23 +224,23 @@ function App() {
               {`Phase: ${openVizPieChartPerformanceData?.phase}`}
               <br />
               <br />
-              {`Render duration: ${Math.round(
-                openVizPieChartPerformanceData?.actualDuration || NaN
+              {`Render duration: ${openVizPieChartPerformanceData?.actualDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Re-render duration (update): ${Math.round(
-                openVizPieChartPerformanceData?.baseDuration || NaN
+              {`Re-render duration (update): ${openVizPieChartPerformanceData?.baseDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Start render or update: ${Math.round(
-                openVizPieChartPerformanceData?.startTime || NaN
+              {`Start render or update: ${openVizPieChartPerformanceData?.startTime?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Comitted to render or update ${Math.round(
-                openVizPieChartPerformanceData?.commitTime || NaN
+              {`Comitted to render or update ${openVizPieChartPerformanceData?.commitTime?.toFixed(
+                2
               )}ms`}
               <br />
             </div>
@@ -265,23 +265,23 @@ function App() {
               {`Phase: ${rechartsBarChartPerformanceData?.phase}`}
               <br />
               <br />
-              {`Render duration: ${Math.round(
-                rechartsBarChartPerformanceData?.actualDuration || NaN
+              {`Render duration: ${rechartsBarChartPerformanceData?.actualDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Re-render duration (update): ${Math.round(
-                rechartsBarChartPerformanceData?.baseDuration || NaN
+              {`Re-render duration (update): ${rechartsBarChartPerformanceData?.baseDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Start render or update: ${Math.round(
-                rechartsBarChartPerformanceData?.startTime || NaN
+              {`Start render or update: ${rechartsBarChartPerformanceData?.startTime?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Comitted to render or update ${Math.round(
-                rechartsBarChartPerformanceData?.commitTime || NaN
+              {`Comitted to render or update ${rechartsBarChartPerformanceData?.commitTime?.toFixed(
+                2
               )}ms`}
               <br />
             </div>
@@ -306,23 +306,23 @@ function App() {
               {`Phase: ${rechartsPieChartPerformanceData?.phase}`}
               <br />
               <br />
-              {`Render duration: ${Math.round(
-                rechartsPieChartPerformanceData?.actualDuration || NaN
+              {`Render duration: ${rechartsPieChartPerformanceData?.actualDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Re-render duration (update): ${Math.round(
-                rechartsPieChartPerformanceData?.baseDuration || NaN
+              {`Re-render duration (update): ${rechartsPieChartPerformanceData?.baseDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Start render or update: ${Math.round(
-                rechartsPieChartPerformanceData?.startTime || NaN
+              {`Start render or update: ${rechartsPieChartPerformanceData?.startTime?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Comitted to render or update ${Math.round(
-                rechartsPieChartPerformanceData?.commitTime || NaN
+              {`Comitted to render or update ${rechartsPieChartPerformanceData?.commitTime?.toFixed(
+                2
               )}ms`}
               <br />
             </div>
@@ -344,23 +344,23 @@ function App() {
               {`Phase: ${nivoBarChartPerformanceData?.phase}`}
               <br />
               <br />
-              {`Render duration: ${Math.round(
-                nivoBarChartPerformanceData?.actualDuration || NaN
+              {`Render duration: ${nivoBarChartPerformanceData?.actualDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Re-render duration (update): ${Math.round(
-                nivoBarChartPerformanceData?.baseDuration || NaN
+              {`Re-render duration (update): ${nivoBarChartPerformanceData?.baseDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Start render or update: ${Math.round(
-                nivoBarChartPerformanceData?.startTime || NaN
+              {`Start render or update: ${nivoBarChartPerformanceData?.startTime?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Comitted to render or update ${Math.round(
-                nivoBarChartPerformanceData?.commitTime || NaN
+              {`Comitted to render or update ${nivoBarChartPerformanceData?.commitTime?.toFixed(
+                2
               )}ms`}
               <br />
             </div>
@@ -382,23 +382,23 @@ function App() {
               {`Phase: ${nivoPieChartPerformanceData?.phase}`}
               <br />
               <br />
-              {`Render duration: ${Math.round(
-                nivoPieChartPerformanceData?.actualDuration || NaN
+              {`Render duration: ${nivoPieChartPerformanceData?.actualDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Re-render duration (update): ${Math.round(
-                nivoPieChartPerformanceData?.baseDuration || NaN
+              {`Re-render duration (update): ${nivoPieChartPerformanceData?.baseDuration?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Start render or update: ${Math.round(
-                nivoPieChartPerformanceData?.startTime || NaN
+              {`Start render or update: ${nivoPieChartPerformanceData?.startTime?.toFixed(
+                2
               )}ms`}
               <br />
               <br />
-              {`Comitted to render or update ${Math.round(
-                nivoPieChartPerformanceData?.commitTime || NaN
+              {`Comitted to render or update ${nivoPieChartPerformanceData?.commitTime?.toFixed(
+                2
               )}ms`}
               <br />
             </div>
